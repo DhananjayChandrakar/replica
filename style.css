@@ -1,0 +1,193 @@
+/* GLOBAL STYLES */
+:root {
+    --color-primary: #1e88e5; /* A shade of blue, common for UN/NGO sites */
+    --color-secondary: #00796b; /* A greenish/teal color for restoration theme */
+    --color-text: #333;
+    --color-bg-light: #f5f5f5;
+    --color-border: #ddd;
+    --color-sidebar-bg: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: #fff;
+}
+
+/* HEADER */
+.site-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* MAIN LAYOUT */
+.page-wrapper {
+    display: flex;
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* SIDEBAR NAVIGATION */
+.sidebar-nav {
+    flex: 0 0 250px; /* Fixed width for sidebar on large screens */
+    padding-right: 30px;
+    border-right: 1px solid var(--color-border);
+    background-color: var(--color-sidebar-bg);
+}
+
+.nav-section {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-top: 20px;
+    padding: 5px 15px;
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background-color 0.2s;
+}
+
+.sidebar-nav li a:hover {
+    background-color: var(--color-border);
+}
+
+.sidebar-nav li.active a {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 700;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex-grow: 1;
+    padding: 0 30px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+}
+
+/* TYPOGRAPHY & SECTIONS */
+.main-content h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--color-secondary);
+}
+
+.main-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* MEDIA & PLACEHOLDERS */
+.featured-image {
+    margin-bottom: 20px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.featured-image figcaption {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: right;
+    padding-top: 5px;
+}
+
+.video-placeholder {
+    background-color: #eee;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    border: 1px dashed var(--color-border);
+    color: #666;
+}
+
+/* CALL TO ACTION */
+.call-to-action {
+    background-color: var(--color-bg-light);
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.call-to-action button {
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.call-to-action button:hover {
+    background-color: #004d40; /* Darker secondary color */
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 850px) {
+    .page-wrapper {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar-nav {
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    /* Hide navigation sections to simplify mobile view (could be converted to an accordion/dropdown) */
+    .sidebar-nav ul {
+        display: none; 
+    }
+    
+    .sidebar-nav .nav-section:first-of-type {
+        margin-top: 0;
+    }
+    
+    .sidebar-nav .nav-section {
+        display: block; /* Make the section title visible as a header */
+    }
+
+    .main-content {
+        padding: 20px 0;
+    }
+}
